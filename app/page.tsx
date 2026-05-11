@@ -252,7 +252,7 @@ function Hero() {
             <p className="mb-5 w-fit rounded-full border border-[#FFFCF2]/26 px-4 py-2 text-[0.58rem] font-bold uppercase tracking-normal text-[#FFFCF2]/82 sm:mb-6 sm:text-[0.62rem]">
               Design europeu com precisão alemã
             </p>
-            <h1 className="font-display max-w-4xl text-5xl font-light leading-[0.94] text-[#FFFCF2] sm:text-7xl sm:leading-[0.9] lg:text-8xl xl:text-9xl">
+            <h1 className="font-display max-w-4xl text-5xl font-normal leading-[0.94] text-[#FFFCF2] sm:text-7xl sm:leading-[0.9] lg:text-8xl xl:text-9xl">
               Ambientes personalizados para viver com alma.
             </h1>
             <p className="mt-6 max-w-2xl font-display text-lg font-light leading-7 text-[#FFFCF2]/82 sm:mt-8 sm:text-2xl sm:leading-10">
@@ -367,7 +367,7 @@ function Differentials() {
             <p className="text-[0.62rem] font-bold uppercase tracking-normal text-[#C44E2A]">
               Diferenciais Finger
             </p>
-            <h2 className="font-display text-4xl font-light leading-[0.98] sm:text-6xl">
+            <h2 className="font-display text-4xl font-normal leading-[0.98] sm:text-6xl">
               Luxo silencioso é precisão, acolhimento e permanência.
             </h2>
           </div>
