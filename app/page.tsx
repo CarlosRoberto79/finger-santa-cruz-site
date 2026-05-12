@@ -112,6 +112,7 @@ const specialists = [
       "Gerente Comercial da Finger Santa Cruz do Sul, Geísa Raupp possui mais de 15 anos de experiência no universo dos ambientes planejados.",
       "Sua trajetória construída ao lado de clientes e projetos personalizados garante um atendimento próximo, estratégico e orientado aos detalhes que tornam cada ambiente único.",
     ],
+    cta: "Inicie seu atendimento comigo",
   },
   {
     name: "ALICE ANTUNES",
@@ -521,6 +522,15 @@ function Specialists() {
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
+                  {"cta" in person ? (
+                    <WhatsAppLink
+                      id="cta-whatsapp-geisa"
+                      className="mt-7 flex min-h-12 items-center justify-center rounded-full border border-[#FFFCF2]/18 px-5 text-center text-xs font-bold text-[#FFFCF2]/86 transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] hover:text-white"
+                      message={`${whatsappMessage}\n\nGostaria de iniciar meu atendimento com Geísa Raupp.`}
+                    >
+                      {person.cta}
+                    </WhatsAppLink>
+                  ) : null}
                 </div>
               </article>
             ))}
