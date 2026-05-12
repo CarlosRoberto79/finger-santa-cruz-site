@@ -55,7 +55,7 @@ const specialists = [
     id: "geisa-raupp",
     name: "Geísa Raupp",
     jobTitle: "Gerente Comercial",
-    image: "/specialists/geisa.webp",
+    image: "/specialists/geisa.jpg",
     description:
       "Gerente Comercial da Finger Santa Cruz do Sul, com experiência em ambientes planejados e atendimento consultivo personalizado.",
   },
@@ -63,7 +63,7 @@ const specialists = [
     id: "alice-antunes",
     name: "Alice Antunes",
     jobTitle: "Especialista em ambientes planejados",
-    image: "/specialists/alice.webp",
+    image: "/specialists/alice.jpg",
     description:
       "Especialista da Finger Santa Cruz do Sul com atuação em interiores, funcionalidade e ambientes personalizados.",
   },
@@ -71,7 +71,7 @@ const specialists = [
     id: "ana-nicolay",
     name: "Ana Nicolay",
     jobTitle: "Arquiteta e Urbanista",
-    image: "/specialists/ana.webp",
+    image: "/specialists/ana.jpg",
     description:
       "Arquiteta e Urbanista da Finger Santa Cruz do Sul, especializada em projetos de interiores e detalhamento de ambientes personalizados.",
   },

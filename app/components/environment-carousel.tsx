@@ -1,7 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { useCallback, useEffect, useRef } from "react";
+import { EnvironmentCarouselControls } from "./environment-carousel-controls";
 
 export type EnvironmentItem = {
   title: string;
@@ -10,136 +8,21 @@ export type EnvironmentItem = {
   alt: string;
 };
 
-function ArrowIcon({ direction }: { direction: "previous" | "next" }) {
-  return (
-    <svg
-      aria-hidden="true"
-      className="h-4 w-4"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.7"
-    >
-      {direction === "previous" ? (
-        <path d="M15 18l-6-6 6-6" />
-      ) : (
-        <path d="M9 6l6 6-6 6" />
-      )}
-    </svg>
-  );
-}
+const carouselId = "ambientes-carousel";
+const regionId = "ambientes-carousel-region";
 
 export function EnvironmentCarousel({ items }: { items: EnvironmentItem[] }) {
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const isPausedRef = useRef(false);
-
-  const scroll = useCallback((direction: "previous" | "next") => {
-    const carousel = carouselRef.current;
-
-    if (!carousel) {
-      return;
-    }
-
-    const scrollAmount = carousel.clientWidth * 0.82;
-    const isAtStart = carousel.scrollLeft <= 4;
-    const isAtEnd =
-      carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 6;
-
-    if (direction === "next" && isAtEnd) {
-      carousel.scrollTo({ left: 0, behavior: "smooth" });
-      return;
-    }
-
-    if (direction === "previous" && isAtStart) {
-      carousel.scrollTo({
-        left: carousel.scrollWidth - carousel.clientWidth,
-        behavior: "smooth",
-      });
-      return;
-    }
-
-    carousel.scrollBy({
-      left: direction === "next" ? scrollAmount : -scrollAmount,
-      behavior: "smooth",
-    });
-  }, []);
-
-  useEffect(() => {
-    if (items.length <= 1) {
-      return;
-    }
-
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (prefersReducedMotion) {
-      return;
-    }
-
-    const autoplay = window.setInterval(() => {
-      if (!isPausedRef.current) {
-        scroll("next");
-      }
-    }, 4500);
-
-    return () => window.clearInterval(autoplay);
-  }, [items.length, scroll]);
-
   return (
-    <div
-      className="relative mt-12 sm:mt-14"
-      onMouseEnter={() => {
-        isPausedRef.current = true;
-      }}
-      onMouseLeave={() => {
-        isPausedRef.current = false;
-      }}
-      onFocus={() => {
-        isPausedRef.current = true;
-      }}
-      onBlur={() => {
-        isPausedRef.current = false;
-      }}
-      onPointerDown={() => {
-        isPausedRef.current = true;
-      }}
-      onPointerUp={() => {
-        isPausedRef.current = false;
-      }}
-    >
-      <div className="mb-6 flex items-end justify-between gap-5 sm:mb-7">
-        <p className="max-w-md text-[0.62rem] font-bold uppercase leading-5 tracking-normal text-[#403D39]/52">
-          Explore composições para diferentes formas de viver e trabalhar.
-        </p>
-        <div className="flex shrink-0 items-center gap-3">
-          <button
-            aria-label="Ambiente anterior"
-            aria-controls="ambientes-carousel"
-            className="grid h-11 w-11 place-items-center rounded-full border border-[#403D39]/18 text-[#403D39] transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] hover:text-white"
-            type="button"
-            onClick={() => scroll("previous")}
-          >
-            <ArrowIcon direction="previous" />
-          </button>
-          <button
-            aria-label="Próximo ambiente"
-            aria-controls="ambientes-carousel"
-            className="grid h-11 w-11 place-items-center rounded-full border border-[#403D39]/18 text-[#403D39] transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] hover:text-white"
-            type="button"
-            onClick={() => scroll("next")}
-          >
-            <ArrowIcon direction="next" />
-          </button>
-        </div>
-      </div>
+    <div className="relative mt-12 sm:mt-14" id={regionId}>
+      <EnvironmentCarouselControls
+        carouselId={carouselId}
+        itemCount={items.length}
+        regionId={regionId}
+      />
 
       <div
-        id="ambientes-carousel"
+        id={carouselId}
         aria-label="Galeria de ambientes planejados Finger"
-        ref={carouselRef}
         className="-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto px-5 pb-3 [scrollbar-width:none] sm:-mx-8 sm:scroll-px-8 sm:gap-5 sm:px-8 lg:mx-0 lg:scroll-px-0 lg:px-0 [&::-webkit-scrollbar]:hidden"
       >
         {items.map((item, index) => (

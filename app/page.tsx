@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { EnvironmentCarousel } from "./components/environment-carousel";
+import { HeroBackgroundVideo } from "./components/hero-background-video";
 import { LeadForm } from "./components/lead-form";
 import { SectionHeading } from "./components/section-heading";
 import {
@@ -105,7 +106,7 @@ const specialists = [
   {
     name: "GEÍSA RAUPP",
     role: "Gerente Comercial • Finger Santa Cruz do Sul",
-    image: "/specialists/geisa.webp",
+    image: "/specialists/geisa.jpg",
     alt: "Geísa Raupp, especialista Finger Santa Cruz do Sul.",
     bio: [
       "Gerente Comercial da Finger Santa Cruz do Sul, Geísa Raupp possui mais de 15 anos de experiência no universo dos ambientes planejados.",
@@ -116,7 +117,7 @@ const specialists = [
   {
     name: "ALICE ANTUNES",
     role: "Especialista • Finger Santa Cruz do Sul",
-    image: "/specialists/alice.webp",
+    image: "/specialists/alice.jpg",
     alt: "Alice Antunes, especialista Finger Santa Cruz do Sul.",
     bio: [
       "Com olhar contemporâneo e sensibilidade para interiores, Alice Antunes atua no desenvolvimento de ambientes que unem estética, funcionalidade e personalidade.",
@@ -126,7 +127,7 @@ const specialists = [
   {
     name: "ANA NICOLAY",
     role: "Especialista • Finger Santa Cruz do Sul",
-    image: "/specialists/ana.webp",
+    image: "/specialists/ana.jpg",
     alt: "Ana Nicolay, especialista Finger Santa Cruz do Sul.",
     bio: [
       "Arquiteta e Urbanista, Ana Nicolay transforma técnica e sensibilidade em ambientes que equilibram funcionalidade, conforto e estética contemporânea.",
@@ -174,18 +175,7 @@ function Hero() {
             sizes="100vw"
             className="object-cover"
           />
-          <video
-            aria-hidden="true"
-            className="absolute inset-0 hidden h-full w-full scale-[1.02] object-cover opacity-90 motion-safe:block"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster={heroPoster}
-          >
-            <source src={heroVideo} type="video/mp4" />
-          </video>
+          <HeroBackgroundVideo poster={heroPoster} src={heroVideo} />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(37,36,34,0.68)_0%,rgba(37,36,34,0.36)_48%,rgba(37,36,34,0.12)_100%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(37,36,34,0.32)_0%,rgba(37,36,34,0.03)_45%,rgba(37,36,34,0.26)_100%)]" />
         </div>
@@ -505,7 +495,7 @@ function Specialists() {
                     src={person.image}
                     alt={person.alt}
                     fill
-                    sizes="(min-width: 1024px) 24vw, (min-width: 640px) 46vw, 92vw"
+                    sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 24vw, (min-width: 640px) 46vw, 92vw"
                     className="object-cover transition duration-700 group-hover:scale-[1.025]"
                   />
                 </div>
