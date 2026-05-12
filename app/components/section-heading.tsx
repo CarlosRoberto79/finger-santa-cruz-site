@@ -5,6 +5,7 @@ type SectionHeadingProps = {
   title: string;
   children?: ReactNode;
   className?: string;
+  titleId?: string;
 };
 
 export function SectionHeading({
@@ -12,13 +13,17 @@ export function SectionHeading({
   title,
   children,
   className = "",
+  titleId,
 }: SectionHeadingProps) {
   return (
     <div className={`space-y-5 ${className}`}>
       <p className="text-[0.62rem] font-bold uppercase tracking-normal text-[#C44E2A]">
         {eyebrow}
       </p>
-      <h2 className="font-display text-[2.35rem] font-[500] leading-[1] text-[#252422] sm:text-5xl sm:leading-[0.98] lg:text-6xl">
+      <h2
+        id={titleId}
+        className="font-display text-[2.35rem] font-[500] leading-[1] text-[#252422] sm:text-5xl sm:leading-[0.98] lg:text-6xl"
+      >
         {title}
       </h2>
       {children ? (

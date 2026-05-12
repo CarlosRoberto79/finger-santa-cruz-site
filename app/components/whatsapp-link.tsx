@@ -1,17 +1,13 @@
 import type { AnchorHTMLAttributes, ReactNode } from "react";
+import { FINGER_SANTA_CRUZ_WHATSAPP } from "../lib/site-config";
 
-export const FINGER_SANTA_CRUZ_WHATSAPP = "5551999718164";
-export const FINGER_SANTA_CRUZ_WHATSAPP_DISPLAY = "+55 51 99971-8164";
-export const FINGER_SANTA_CRUZ_ADDRESS =
-  "Rua Tenente Coronel Brito, 141 loja 5, Santa Cruz do Sul - RS, CEP 96810-202";
-export const FINGER_SANTA_CRUZ_HOURS =
-  "Seg - Sex: 08:30-12:00 | 13:30-18:00";
-
-export const FINGER_SANTA_CRUZ_SOCIALS = {
-  instagram: "https://www.instagram.com/fingersantacruzdosul",
-  facebook: "https://www.facebook.com/fingersantacruzdosul",
-  pinterest: "https://www.pinterest.com/fingersantacruzdosul",
-} as const;
+export {
+  FINGER_SANTA_CRUZ_ADDRESS,
+  FINGER_SANTA_CRUZ_HOURS,
+  FINGER_SANTA_CRUZ_SOCIALS,
+  FINGER_SANTA_CRUZ_WHATSAPP,
+  FINGER_SANTA_CRUZ_WHATSAPP_DISPLAY,
+} from "../lib/site-config";
 
 export const DEFAULT_WHATSAPP_MESSAGE =
   "Olá, Finger Santa Cruz do Sul. Gostaria de conversar sobre um ambiente personalizado com a Finger.";

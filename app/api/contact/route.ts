@@ -7,8 +7,7 @@ import {
   validateRequiredSelect,
   validateWhatsApp,
 } from "../../lib/contact-validation";
-
-const CONTACT_RECIPIENTS = ["procarlosroberto@gmail.com"];
+import { CONTACT_FORM_RECIPIENTS } from "../../lib/site-config";
 
 const EMAIL_SUBJECT = "Novo contato pelo site | Finger Santa Cruz do Sul";
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
@@ -169,7 +168,7 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify({
       from,
-      to: CONTACT_RECIPIENTS,
+      to: CONTACT_FORM_RECIPIENTS,
       subject: EMAIL_SUBJECT,
       html,
       text,

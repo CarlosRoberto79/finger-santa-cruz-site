@@ -9,20 +9,19 @@ import {
   FINGER_SANTA_CRUZ_WHATSAPP_DISPLAY,
   WhatsAppLink,
 } from "./components/whatsapp-link";
+import { SITE_IMAGES } from "./lib/site-config";
+import { serializeJsonLd, structuredData } from "./lib/structured-data";
 
-const heroVideo =
-  "https://finger.ind.br/wp-content/uploads/2026/03/bloco-nova-colecao-1.mp4";
-const heroPoster =
-  "https://finger.ind.br/wp-content/uploads/2026/03/bloco-nova-colecao.jpg";
-const institutionalImage =
-  "https://finger.ind.br/wp-content/uploads/2025/08/img-1.jpg";
+const heroVideo = SITE_IMAGES.heroVideo;
+const heroPoster = SITE_IMAGES.heroPoster;
+const institutionalImage = SITE_IMAGES.institutional;
 
 const gallery = [
   {
     title: "A cozinha como lugar de encontro",
     label: "Cozinha",
     image: "https://finger.ind.br/wp-content/uploads/2026/03/home.png",
-    alt: "Cozinha planejada Finger com ilha, madeira escura e iluminação natural.",
+    alt: "Cozinha planejada Finger em Santa Cruz do Sul com ilha, madeira escura e iluminação natural.",
   },
   {
     title: "O living onde a vida ganha forma",
@@ -34,7 +33,7 @@ const gallery = [
     title: "O dormitório como refúgio",
     label: "Dormitório",
     image: "https://finger.ind.br/wp-content/uploads/2026/03/home-5.png",
-    alt: "Dormitório planejado Finger com madeira, luz natural e atmosfera acolhedora.",
+    alt: "Dormitório planejado Finger em Santa Cruz do Sul com madeira, luz natural e atmosfera acolhedora.",
   },
   {
     title: "Banheiro com atmosfera de pausa",
@@ -46,7 +45,7 @@ const gallery = [
     title: "Lavanderia integrada ao ritmo da casa",
     label: "Lavanderia",
     image: "https://finger.ind.br/wp-content/uploads/2026/03/home-11.png",
-    alt: "Lavanderia planejada Finger com armarios sob medida e composicao funcional.",
+    alt: "Lavanderia planejada Finger com armários sob medida e composição funcional.",
   },
   {
     title: "Corporativo com presença e silêncio visual",
@@ -139,42 +138,12 @@ const specialists = [
 const whatsappMessage =
   "Olá, Finger Santa Cruz do Sul. Gostaria de conversar sobre um ambiente personalizado com a Finger.";
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Finger Santa Cruz do Sul",
-  description:
-    "Ambientes personalizados e móveis planejados de alto padrão em Santa Cruz do Sul.",
-  telephone: FINGER_SANTA_CRUZ_WHATSAPP_DISPLAY,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Rua Tenente Coronel Brito, 141 loja 5",
-    addressLocality: "Santa Cruz do Sul",
-    addressRegion: "RS",
-    postalCode: "96810-202",
-    addressCountry: "BR",
-  },
-  openingHours: "Mo-Fr 08:30-12:00,13:30-18:00",
-  areaServed: "Santa Cruz do Sul, RS",
-  brand: {
-    "@type": "Brand",
-    name: "Finger Móveis Planejados",
-  },
-  makesOffer: [
-    "Ambientes personalizados",
-    "Móveis planejados",
-    "Cozinhas planejadas",
-    "Dormitórios planejados",
-    "Projetos de interiores",
-  ],
-};
-
 export default function Home() {
   return (
     <main id="top" className="overflow-hidden bg-[#FFFCF2] text-[#403D39]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(structuredData) }}
       />
       <Hero />
       <Institutional />
@@ -192,13 +161,16 @@ export default function Home() {
 function Hero() {
   return (
     <>
-      <section className="relative min-h-[82svh] overflow-hidden bg-[#252422] text-[#FFFCF2] sm:min-h-[86svh]">
+      <section
+        aria-labelledby="hero-title"
+        className="relative min-h-[82svh] overflow-hidden bg-[#252422] text-[#FFFCF2] sm:min-h-[86svh]"
+      >
         <div className="absolute inset-0">
           <Image
             src={heroPoster}
-            alt="Cozinha planejada Finger com madeira natural, ilha central e vista para a natureza."
+            alt="Cozinha planejada Finger em Santa Cruz do Sul com madeira natural, ilha central e vista para a natureza."
             fill
-            priority
+            preload
             sizes="100vw"
             className="object-cover"
           />
@@ -218,7 +190,10 @@ function Hero() {
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(37,36,34,0.32)_0%,rgba(37,36,34,0.03)_45%,rgba(37,36,34,0.26)_100%)]" />
         </div>
 
-        <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 sm:py-6 lg:px-10">
+        <header
+          aria-label="Cabeçalho principal"
+          className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 sm:py-6 lg:px-10"
+        >
           <a
             className="group flex items-center gap-4"
             href="#top"
@@ -229,7 +204,6 @@ function Hero() {
               alt="Finger Móveis Planejados"
               width={124}
               height={55}
-              priority
               className="h-[44px] w-auto sm:h-[62px]"
             />
             <span className="block border-l border-white/18 pl-[0.85rem] text-[0.6rem] font-bold uppercase leading-[0.84rem] tracking-normal text-[#FFFCF2]/68 sm:border-white/22 sm:pl-[1.1rem] sm:text-[0.69rem] sm:leading-[1.1rem]">
@@ -239,7 +213,10 @@ function Hero() {
             </span>
           </a>
 
-          <nav className="hidden items-center gap-8 text-[0.58rem] font-bold uppercase tracking-normal text-[#FFFCF2]/64 md:flex">
+          <nav
+            aria-label="Navegação principal"
+            className="hidden items-center gap-8 text-[0.58rem] font-bold uppercase tracking-normal text-[#FFFCF2]/64 md:flex"
+          >
             <a className="transition hover:text-[#FFFCF2]" href="#diferenciais">
               Diferenciais
             </a>
@@ -253,6 +230,7 @@ function Hero() {
 
           <WhatsAppLink
             id="cta-whatsapp-header"
+            aria-label="Conversar com a Finger Santa Cruz do Sul pelo WhatsApp"
             className="hidden h-12 items-center rounded-full border border-[#FFFCF2]/28 px-6 text-xs font-bold text-[#FFFCF2] transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] sm:inline-flex"
             message={whatsappMessage}
           >
@@ -265,7 +243,10 @@ function Hero() {
             <p className="mb-5 w-fit rounded-full border border-[#FFFCF2]/26 px-4 py-2 text-[0.58rem] font-bold uppercase tracking-normal text-[#FFFCF2]/82 sm:mb-6 sm:text-[0.62rem]">
               Design europeu com precisão alemã
             </p>
-            <h1 className="font-display max-w-4xl text-5xl font-[500] leading-[0.94] text-[#FFFCF2] sm:text-7xl sm:leading-[0.9] lg:text-8xl xl:text-9xl">
+            <h1
+              id="hero-title"
+              className="font-display max-w-4xl text-5xl font-[500] leading-[0.94] text-[#FFFCF2] sm:text-7xl sm:leading-[0.9] lg:text-8xl xl:text-9xl"
+            >
               Ambientes personalizados para viver com alma.
             </h1>
             <p className="mt-6 max-w-2xl font-display text-lg font-light leading-7 text-[#FFFCF2]/82 sm:mt-8 sm:text-2xl sm:leading-10">
@@ -276,6 +257,7 @@ function Hero() {
             <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row">
               <WhatsAppLink
                 id="cta-whatsapp-hero"
+                aria-label="Iniciar atendimento pelo WhatsApp com a Finger Santa Cruz do Sul"
                 className="flex min-h-14 items-center justify-center rounded-full bg-[#C44E2A] px-6 text-center text-sm font-bold text-white transition duration-300 hover:bg-[#FFFCF2] hover:text-[#403D39] sm:px-7"
                 message={whatsappMessage}
               >
@@ -326,10 +308,15 @@ function HeroMetric({ value, label }: { value: string; label: string }) {
 
 function Institutional() {
   return (
-    <section id="sobre" className="px-5 py-20 sm:px-8 sm:py-32 lg:px-10">
+    <section
+      id="sobre"
+      aria-labelledby="sobre-title"
+      className="px-5 py-20 sm:px-8 sm:py-32 lg:px-10"
+    >
       <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
         <SectionHeading
           eyebrow="Bem-estar"
+          titleId="sobre-title"
           title="Um bom ambiente não é apenas onde você vive. É onde você se encontra."
         >
           <p>
@@ -372,6 +359,7 @@ function Differentials() {
   return (
     <section
       id="diferenciais"
+      aria-labelledby="diferenciais-title"
       className="bg-[#252422] px-5 py-20 text-[#FFFCF2] sm:px-8 sm:py-32 lg:px-10"
     >
       <div className="mx-auto max-w-7xl">
@@ -380,7 +368,10 @@ function Differentials() {
             <p className="text-[0.62rem] font-bold uppercase tracking-normal text-[#C44E2A]">
               Diferenciais Finger
             </p>
-            <h2 className="font-display text-4xl font-[500] leading-[0.98] sm:text-6xl">
+            <h2
+              id="diferenciais-title"
+              className="font-display text-4xl font-[500] leading-[0.98] sm:text-6xl"
+            >
               Luxo silencioso é precisão, acolhimento e permanência.
             </h2>
           </div>
@@ -414,11 +405,13 @@ function Gallery() {
   return (
     <section
       id="ambientes"
+      aria-labelledby="ambientes-title"
       className="bg-[#FFFDF3] px-5 py-20 sm:px-8 sm:py-32 lg:px-10"
     >
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Galeria de ambientes"
+          titleId="ambientes-title"
           title="Texturas, luz e proporções para transformar o morar em experiência."
           className="max-w-4xl"
         >
@@ -437,7 +430,10 @@ function Gallery() {
 
 function Authority() {
   return (
-    <section className="px-5 py-20 sm:px-8 sm:py-32 lg:px-10">
+    <section
+      aria-labelledby="autoridade-title"
+      className="px-5 py-20 sm:px-8 sm:py-32 lg:px-10"
+    >
       <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[1fr_1fr] lg:items-center">
         <div className="border-y border-[#403D39]/14 py-8">
           {authorityNumbers.map(([value, label]) => (
@@ -457,6 +453,7 @@ function Authority() {
 
         <SectionHeading
           eyebrow="Autoridade"
+          titleId="autoridade-title"
           title="Uma marca nascida da precisão e movida pelo bem-estar."
         >
           <p>
@@ -478,12 +475,14 @@ function Specialists() {
   return (
     <section
       id="especialistas"
+      aria-labelledby="especialistas-title"
       className="bg-[#252422] px-5 py-20 text-[#FFFCF2] sm:px-8 sm:py-32 lg:px-10"
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
           <SectionHeading
             eyebrow="Especialistas"
+            titleId="especialistas-title"
             title="Atendimento consultivo para transformar intenção em ambiente."
             className="[&_h2]:text-[#FFFCF2] [&_div]:text-[#FFFCF2]/66"
           >
@@ -525,6 +524,7 @@ function Specialists() {
                   {"cta" in person ? (
                     <WhatsAppLink
                       id="cta-whatsapp-geisa"
+                      aria-label="Iniciar atendimento pelo WhatsApp com Geísa Raupp"
                       className="mt-7 flex min-h-12 items-center justify-center rounded-full border border-[#FFFCF2]/18 px-5 text-center text-xs font-bold text-[#FFFCF2]/86 transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] hover:text-white"
                       message={`${whatsappMessage}\n\nGostaria de iniciar meu atendimento com Geísa Raupp.`}
                     >
@@ -545,12 +545,14 @@ function Contact() {
   return (
     <section
       id="contato"
+      aria-labelledby="contato-title"
       className="bg-[#E9E1D5] px-5 py-20 sm:px-8 sm:py-32 lg:px-10"
     >
       <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
         <div className="lg:sticky lg:top-10">
           <SectionHeading
             eyebrow="Atendimento"
+            titleId="contato-title"
             title="Conte como você deseja viver o seu próximo ambiente."
           >
             <p>
@@ -620,7 +622,7 @@ function PremiumFooter() {
             <div className="mt-8 flex items-center gap-3">
               {localSocialLinks.map(([label, href, icon]) => (
                 <a
-                  aria-label={label}
+                  aria-label={`${label} da Finger Santa Cruz do Sul`}
                   className="grid h-11 w-11 place-items-center rounded-full border border-[#FFFCF2]/16 text-[#FFFCF2]/68 transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] hover:text-white"
                   href={href}
                   key={label}
@@ -648,6 +650,7 @@ function PremiumFooter() {
             </a>
             <WhatsAppLink
               id="cta-whatsapp-footer"
+              aria-label="Conversar com um especialista da Finger Santa Cruz do Sul pelo WhatsApp"
               className="text-[#FFFCF2] transition hover:text-[#C44E2A]"
               message={whatsappMessage}
             >
@@ -669,14 +672,14 @@ function FooterContact() {
           <span className="block text-[#FFFCF2]/42">WhatsApp local</span>
           {FINGER_SANTA_CRUZ_WHATSAPP_DISPLAY}
         </p>
-        <p>
+        <address className="not-italic">
           <span className="block text-[#FFFCF2]/42">Showroom</span>
           {showroomAddressLines.map((line) => (
             <span className="block" key={line}>
               {line}
             </span>
           ))}
-        </p>
+        </address>
         <p>
           <span className="block text-[#FFFCF2]/42">Atendimento</span>
           {FINGER_SANTA_CRUZ_HOURS}
@@ -771,9 +774,9 @@ function SocialIcon({
 
 function FooterTitle({ children }: { children: ReactNode }) {
   return (
-    <p className="text-[0.58rem] font-bold uppercase tracking-normal text-[#FFFCF2]/42">
+    <h2 className="text-[0.58rem] font-bold uppercase tracking-normal text-[#FFFCF2]/42">
       {children}
-    </p>
+    </h2>
   );
 }
 
@@ -782,6 +785,7 @@ function MobileWhatsApp() {
     <div className="fixed inset-x-4 bottom-4 z-50 sm:hidden">
       <WhatsAppLink
         id="cta-whatsapp-mobile-sticky"
+        aria-label="Iniciar atendimento pelo WhatsApp com a Finger Santa Cruz do Sul"
         className="flex min-h-14 items-center justify-center rounded-full bg-[#C44E2A] px-6 text-sm font-bold text-white shadow-[0_18px_50px_rgba(37,36,34,0.26)]"
         message={whatsappMessage}
       >

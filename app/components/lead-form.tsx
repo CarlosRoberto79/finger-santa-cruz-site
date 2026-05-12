@@ -160,6 +160,7 @@ export function LeadForm() {
         id="lead-form"
         onSubmit={handleSubmit}
         noValidate
+        aria-busy={isSending}
         className="border border-white/70 bg-[#FFFCF2]/72 p-6 shadow-[0_28px_90px_rgba(64,61,57,0.11)] backdrop-blur-sm sm:p-8 lg:p-10"
       >
         <input
@@ -398,6 +399,8 @@ export function LeadForm() {
       {status === "success" ? (
         <div
           aria-modal="true"
+          aria-labelledby="lead-success-title"
+          aria-describedby="lead-success-description"
           className="fixed inset-0 z-[70] grid place-items-center bg-[#252422]/60 px-5 backdrop-blur-sm"
           role="dialog"
         >
@@ -405,10 +408,16 @@ export function LeadForm() {
             <p className="text-[0.62rem] font-bold uppercase tracking-normal text-[#C44E2A]">
               Solicitação recebida
             </p>
-            <p className="mt-5 font-display text-2xl font-normal leading-tight text-[#252422]">
+            <p
+              id="lead-success-title"
+              className="mt-5 font-display text-2xl font-normal leading-tight text-[#252422]"
+            >
               Mensagem enviada com sucesso.
             </p>
-            <p className="mt-4 font-display text-lg font-light leading-8 text-[#403D39]/76">
+            <p
+              id="lead-success-description"
+              className="mt-4 font-display text-lg font-light leading-8 text-[#403D39]/76"
+            >
               Recebemos suas informações e em breve a equipe da Finger Santa
               Cruz do Sul entrará em contato.
             </p>

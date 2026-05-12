@@ -117,6 +117,7 @@ export function EnvironmentCarousel({ items }: { items: EnvironmentItem[] }) {
         <div className="flex shrink-0 items-center gap-3">
           <button
             aria-label="Ambiente anterior"
+            aria-controls="ambientes-carousel"
             className="grid h-11 w-11 place-items-center rounded-full border border-[#403D39]/18 text-[#403D39] transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] hover:text-white"
             type="button"
             onClick={() => scroll("previous")}
@@ -125,6 +126,7 @@ export function EnvironmentCarousel({ items }: { items: EnvironmentItem[] }) {
           </button>
           <button
             aria-label="Próximo ambiente"
+            aria-controls="ambientes-carousel"
             className="grid h-11 w-11 place-items-center rounded-full border border-[#403D39]/18 text-[#403D39] transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] hover:text-white"
             type="button"
             onClick={() => scroll("next")}
@@ -135,6 +137,8 @@ export function EnvironmentCarousel({ items }: { items: EnvironmentItem[] }) {
       </div>
 
       <div
+        id="ambientes-carousel"
+        aria-label="Galeria de ambientes planejados Finger"
         ref={carouselRef}
         className="-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto px-5 pb-3 [scrollbar-width:none] sm:-mx-8 sm:scroll-px-8 sm:gap-5 sm:px-8 lg:mx-0 lg:scroll-px-0 lg:px-0 [&::-webkit-scrollbar]:hidden"
       >

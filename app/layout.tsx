@@ -1,37 +1,79 @@
 import type { Metadata } from "next";
+import {
+  SHARING_IMAGE_ALT,
+  SITE_DESCRIPTION,
+  SITE_IMAGES,
+  SITE_KEYWORDS,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+} from "./lib/site-config";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Finger Santa Cruz do Sul | Móveis Planejados de Alto Padrão",
-  description:
-    "Ambientes personalizados Finger em Santa Cruz do Sul: móveis planejados de alto padrão, design europeu, bem-estar e interiores sofisticados.",
-  applicationName: "Finger Santa Cruz do Sul",
-  keywords: [
-    "Finger Santa Cruz do Sul",
-    "móveis planejados Santa Cruz do Sul",
-    "móveis planejados alto padrão",
-    "cozinha planejada premium",
-    "closet planejado",
-    "interiores sofisticados",
-  ],
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  keywords: SITE_KEYWORDS,
+  alternates: {
+    canonical: "/",
+    languages: {
+      "pt-BR": "/",
+    },
+  },
   openGraph: {
-    title: "Finger Santa Cruz do Sul | Móveis Planejados de Alto Padrão",
-    description:
-      "Projetos exclusivos para cozinhas, livings, dormitórios, closets e ambientes completos.",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: "/",
+    siteName: SITE_NAME,
     locale: "pt_BR",
     type: "website",
     images: [
       {
-        url: "https://finger.ind.br/wp-content/uploads/2026/03/bloco-nova-colecao.jpg",
+        url: SITE_IMAGES.sharing,
         width: 1920,
         height: 1080,
-        alt: "Ambiente planejado Finger com cozinha em madeira e ilha central.",
+        alt: SHARING_IMAGE_ALT,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: SITE_IMAGES.sharing,
+        alt: SHARING_IMAGE_ALT,
       },
     ],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  category: "home improvement",
+  other: {
+    "geo.region": "BR-RS",
+    "geo.placename": "Santa Cruz do Sul",
+    "business:contact_data:locality": "Santa Cruz do Sul",
+    "business:contact_data:region": "Rio Grande do Sul",
+    "business:contact_data:country_name": "Brasil",
   },
 };
 
