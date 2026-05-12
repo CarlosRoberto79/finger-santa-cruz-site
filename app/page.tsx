@@ -104,22 +104,31 @@ const showroomAddressLines = [
 
 const specialists = [
   {
-    name: "Geisa",
-    role: "Especialista Finger",
-    image: "/specialists/geisa.webp",
-    alt: "Geisa, especialista Finger Santa Cruz do Sul.",
-  },
-  {
-    name: "Alice",
-    role: "Especialista Finger",
-    image: "/specialists/alice.webp",
-    alt: "Alice, especialista Finger Santa Cruz do Sul.",
-  },
-  {
-    name: "Ana",
-    role: "Especialista Finger",
+    name: "ANA NICOLAY",
     image: "/specialists/ana.webp",
-    alt: "Ana, especialista Finger Santa Cruz do Sul.",
+    alt: "Ana Nicolay, especialista Finger Santa Cruz do Sul.",
+    bio: [
+      "Arquiteta e Urbanista, Ana Nicolay transforma técnica e sensibilidade em ambientes que equilibram funcionalidade, conforto e estética contemporânea.",
+      "Com experiência em projetos de interiores e detalhamento executivo, desenvolve espaços personalizados com atenção minuciosa aos detalhes, sempre respeitando o estilo de vida e a essência de cada cliente.",
+    ],
+  },
+  {
+    name: "ALICE ANTUNES",
+    image: "/specialists/alice.webp",
+    alt: "Alice Antunes, especialista Finger Santa Cruz do Sul.",
+    bio: [
+      "Com olhar contemporâneo e sensibilidade para interiores, Alice Antunes atua no desenvolvimento de ambientes que unem estética, funcionalidade e personalidade.",
+      "Sua vivência em projetos de interiores, aliada à paixão por arquitetura e design, contribui para criar espaços acolhedores, elegantes e alinhados à rotina de cada cliente.",
+    ],
+  },
+  {
+    name: "GEÍSA RAUPP",
+    image: "/specialists/geisa.webp",
+    alt: "Geísa Raupp, especialista Finger Santa Cruz do Sul.",
+    bio: [
+      "Gerente Comercial da Finger Santa Cruz do Sul, Geísa Raupp possui mais de 15 anos de experiência no universo dos ambientes planejados.",
+      "Sua trajetória construída ao lado de clientes e projetos personalizados garante um atendimento próximo, estratégico e orientado aos detalhes que tornam cada ambiente único.",
+    ],
   },
 ];
 
@@ -484,7 +493,7 @@ function Specialists() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {specialists.map((person, index) => (
               <article
-                className="group animate-fade-up border border-[#FFFCF2]/12 bg-[#403D39]/42 p-3 transition duration-300 hover:border-[#C44E2A]/48 hover:bg-[#403D39]/70"
+                className="group flex h-full animate-fade-up flex-col border border-[#FFFCF2]/12 bg-[#403D39]/42 p-3 transition duration-300 hover:border-[#C44E2A]/48 hover:bg-[#403D39]/70"
                 key={person.name}
                 style={{ animationDelay: `${index * 90}ms` }}
               >
@@ -497,20 +506,15 @@ function Specialists() {
                     className="object-cover transition duration-700 group-hover:scale-[1.025]"
                   />
                 </div>
-                <div className="px-3 pb-3 pt-6">
-                  <h3 className="font-display text-3xl font-light leading-none text-[#FFFCF2]">
+                <div className="flex flex-1 flex-col px-3 pb-4 pt-6">
+                  <h3 className="font-display text-2xl font-[500] leading-tight text-[#FFFCF2]">
                     {person.name}
                   </h3>
-                  <p className="mt-3 text-[0.62rem] font-bold uppercase tracking-normal text-[#FFFCF2]/50">
-                    {person.role}
-                  </p>
-                  <WhatsAppLink
-                    id={`cta-whatsapp-${person.name.toLowerCase()}`}
-                    className="mt-6 flex min-h-12 items-center justify-center rounded-full border border-[#FFFCF2]/22 px-5 text-xs font-bold text-[#FFFCF2] transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A]"
-                    message={`${whatsappMessage}\n\nGostaria de falar com ${person.name}.`}
-                  >
-                    Fale comigo
-                  </WhatsAppLink>
+                  <div className="mt-5 space-y-4 font-display text-base font-light leading-7 text-[#FFFCF2]/68">
+                    {person.bio.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
                 </div>
               </article>
             ))}
