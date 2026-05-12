@@ -230,9 +230,9 @@ function Hero() {
               width={124}
               height={55}
               priority
-              className="h-10 w-auto sm:h-[55px]"
+              className="h-[44px] w-auto sm:h-[62px]"
             />
-            <span className="block border-l border-white/18 pl-3 text-[0.54rem] font-bold uppercase leading-3 tracking-normal text-[#FFFCF2]/68 sm:border-white/22 sm:pl-4 sm:text-[0.62rem] sm:leading-4">
+            <span className="block border-l border-white/18 pl-[0.85rem] text-[0.6rem] font-bold uppercase leading-[0.84rem] tracking-normal text-[#FFFCF2]/68 sm:border-white/22 sm:pl-[1.1rem] sm:text-[0.69rem] sm:leading-[1.1rem]">
               Santa Cruz
               <br />
               do Sul
@@ -260,7 +260,7 @@ function Hero() {
           </WhatsAppLink>
         </header>
 
-        <div className="relative z-10 mx-auto flex min-h-[calc(82svh-82px)] max-w-7xl flex-col justify-end px-5 pb-12 pt-16 sm:min-h-[calc(86svh-102px)] sm:px-8 sm:pb-16 sm:pt-20 lg:px-10 lg:pb-20">
+        <div className="relative z-10 mx-auto flex min-h-[calc(82svh-86px)] max-w-7xl flex-col justify-end px-5 pb-12 pt-16 sm:min-h-[calc(86svh-110px)] sm:px-8 sm:pb-16 sm:pt-20 lg:px-10 lg:pb-20">
           <div className="max-w-3xl animate-fade-up">
             <p className="mb-5 w-fit rounded-full border border-[#FFFCF2]/26 px-4 py-2 text-[0.58rem] font-bold uppercase tracking-normal text-[#FFFCF2]/82 sm:mb-6 sm:text-[0.62rem]">
               Design europeu com precisão alemã
