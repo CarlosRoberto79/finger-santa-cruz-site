@@ -104,16 +104,18 @@ const showroomAddressLines = [
 
 const specialists = [
   {
-    name: "ANA NICOLAY",
-    image: "/specialists/ana.webp",
-    alt: "Ana Nicolay, especialista Finger Santa Cruz do Sul.",
+    name: "GEÍSA RAUPP",
+    role: "Gerente Comercial • Finger Santa Cruz do Sul",
+    image: "/specialists/geisa.webp",
+    alt: "Geísa Raupp, especialista Finger Santa Cruz do Sul.",
     bio: [
-      "Arquiteta e Urbanista, Ana Nicolay transforma técnica e sensibilidade em ambientes que equilibram funcionalidade, conforto e estética contemporânea.",
-      "Com experiência em projetos de interiores e detalhamento executivo, desenvolve espaços personalizados com atenção minuciosa aos detalhes, sempre respeitando o estilo de vida e a essência de cada cliente.",
+      "Gerente Comercial da Finger Santa Cruz do Sul, Geísa Raupp possui mais de 15 anos de experiência no universo dos ambientes planejados.",
+      "Sua trajetória construída ao lado de clientes e projetos personalizados garante um atendimento próximo, estratégico e orientado aos detalhes que tornam cada ambiente único.",
     ],
   },
   {
     name: "ALICE ANTUNES",
+    role: "Especialista • Finger Santa Cruz do Sul",
     image: "/specialists/alice.webp",
     alt: "Alice Antunes, especialista Finger Santa Cruz do Sul.",
     bio: [
@@ -122,12 +124,13 @@ const specialists = [
     ],
   },
   {
-    name: "GEÍSA RAUPP",
-    image: "/specialists/geisa.webp",
-    alt: "Geísa Raupp, especialista Finger Santa Cruz do Sul.",
+    name: "ANA NICOLAY",
+    role: "Especialista • Finger Santa Cruz do Sul",
+    image: "/specialists/ana.webp",
+    alt: "Ana Nicolay, especialista Finger Santa Cruz do Sul.",
     bio: [
-      "Gerente Comercial da Finger Santa Cruz do Sul, Geísa Raupp possui mais de 15 anos de experiência no universo dos ambientes planejados.",
-      "Sua trajetória construída ao lado de clientes e projetos personalizados garante um atendimento próximo, estratégico e orientado aos detalhes que tornam cada ambiente único.",
+      "Arquiteta e Urbanista, Ana Nicolay transforma técnica e sensibilidade em ambientes que equilibram funcionalidade, conforto e estética contemporânea.",
+      "Com experiência em projetos de interiores e detalhamento executivo, desenvolve espaços personalizados com atenção minuciosa aos detalhes, sempre respeitando o estilo de vida e a essência de cada cliente.",
     ],
   },
 ];
@@ -510,6 +513,9 @@ function Specialists() {
                   <h3 className="font-display text-2xl font-[500] leading-tight text-[#FFFCF2]">
                     {person.name}
                   </h3>
+                  <p className="mt-3 text-[0.58rem] font-bold uppercase leading-4 tracking-normal text-[#C44E2A]/78">
+                    {person.role}
+                  </p>
                   <div className="mt-5 space-y-4 font-display text-base font-light leading-7 text-[#FFFCF2]/68">
                     {person.bio.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
