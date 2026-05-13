@@ -137,7 +137,7 @@ const specialists = [
 ];
 
 const whatsappMessage =
-  "Olá, Finger Santa Cruz do Sul. Gostaria de conversar sobre um ambiente personalizado com a Finger.";
+  "Olá, Finger Santa Cruz do Sul. Quero fazer um ambiente personalizado com vocês.\n\nGostaria de iniciar meu atendimento com a Geísa Raupp.";
 
 export default function Home() {
   return (
@@ -516,7 +516,7 @@ function Specialists() {
                       id="cta-whatsapp-geisa"
                       aria-label="Iniciar atendimento pelo WhatsApp com Geísa Raupp"
                       className="mt-7 flex min-h-12 items-center justify-center rounded-full border border-[#FFFCF2]/18 px-5 text-center text-xs font-bold text-[#FFFCF2]/86 transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] hover:text-white"
-                      message={`${whatsappMessage}\n\nGostaria de iniciar meu atendimento com Geísa Raupp.`}
+                      message={whatsappMessage}
                     >
                       {person.cta}
                     </WhatsAppLink>

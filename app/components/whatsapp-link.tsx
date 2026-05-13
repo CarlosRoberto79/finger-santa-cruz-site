@@ -10,7 +10,7 @@ export {
 } from "../lib/site-config";
 
 export const DEFAULT_WHATSAPP_MESSAGE =
-  "Olá, Finger Santa Cruz do Sul. Gostaria de conversar sobre um ambiente personalizado com a Finger.";
+  "Olá, Finger Santa Cruz do Sul. Quero fazer um ambiente personalizado com vocês.\n\nGostaria de iniciar meu atendimento com a Geísa Raupp.";
 
 export function buildWhatsappHref(message = DEFAULT_WHATSAPP_MESSAGE) {
   return `https://wa.me/${FINGER_SANTA_CRUZ_WHATSAPP}?text=${encodeURIComponent(message)}`;
