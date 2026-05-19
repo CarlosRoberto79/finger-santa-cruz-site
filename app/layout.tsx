@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleTagManager } from "@next/third-parties/google";
 import {
   SHARING_IMAGE_ALT,
   SITE_DESCRIPTION,
@@ -84,7 +85,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="h-full antialiased">
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <GoogleTagManager gtmId="GTM-P8FMLBK9" />
+        {children}
+      </body>
     </html>
   );
 }
