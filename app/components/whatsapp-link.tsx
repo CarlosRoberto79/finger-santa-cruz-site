@@ -13,7 +13,7 @@ export const DEFAULT_WHATSAPP_MESSAGE =
   "Olá, Finger Santa Cruz do Sul. Quero fazer um ambiente personalizado com vocês.\n\nGostaria de iniciar meu atendimento com a Geísa Raupp.";
 
 export function buildWhatsappHref(message = DEFAULT_WHATSAPP_MESSAGE) {
-  return `https://wa.me/${FINGER_SANTA_CRUZ_WHATSAPP}?text=${encodeURIComponent(message)}`;
+  return `https://tintim.link/whatsapp/f0917ae2-b8c6-4982-bd89-07a661ad4428/16b1cb24-27a8-4eec-8594-cc1d74f6eaa2?text=${encodeURIComponent(message)}`;
 }
 
 type WhatsAppLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
