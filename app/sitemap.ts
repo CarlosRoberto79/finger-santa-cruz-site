@@ -1,12 +1,11 @@
 import type { MetadataRoute } from "next";
-import { absoluteUrl } from "./lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: absoluteUrl("/"),
+      url: "https://www.fingersantacruz.com.br",
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 1,
     },
   ];
