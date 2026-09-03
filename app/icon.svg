@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>F da Finger Santa Cruz do Sul</title>
+  <rect width="64" height="64" rx="14" fill="#C44E2A" />
+  <path
+    d="M22.8 31.8h10.6c2.45 0 4.43-1.99 4.43-4.43h-15V25c0-1.95.76-3.78 2.15-5.16a7.27 7.27 0 0 1 5.18-2.14h3.02v-4.46h-3.05a11.67 11.67 0 0 0-8.33 3.52 11.66 11.66 0 0 0-3.04 7.99v28.04h4.57l-.06-21Z"
+    fill="#fff"
+  />
+  <path d="M39.4 22.2v25.95h-4.36V25.4c0-2.78 1.52-3.55 4.36-3.2Z" fill="#fff" />
+  <path d="M39.4 17.6a4.4 4.4 0 0 0 4.36-4.34H39.4v4.34Z" fill="#fff" />
+</svg>
