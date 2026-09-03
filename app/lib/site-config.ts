@@ -1,4 +1,4 @@
-const FALLBACK_SITE_URL = "https://finger-santa-cruz-site.vercel.app";
+const FALLBACK_SITE_URL = "https://www.fingersantacruz.com.br";
 
 function withoutTrailingSlash(url: string) {
   return url.replace(/\/+$/, "");
