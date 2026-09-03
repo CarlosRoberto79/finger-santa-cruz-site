@@ -45,7 +45,7 @@ export const FINGER_SANTA_CRUZ_COMMERCIAL_EMAIL =
 export const CONTACT_FORM_RECIPIENTS = ["procarlosroberto@gmail.com"];
 
 export const FINGER_SANTA_CRUZ_SOCIALS = {
-  instagram: "https://www.instagram.com/fingersantacruzdosul",
+  instagram: "https://www.instagram.com/finger.santacruzdosul/",
   facebook: "https://www.facebook.com/fingersantacruzdosul",
   pinterest: "https://www.pinterest.com/fingersantacruzdosul",
 } as const;
