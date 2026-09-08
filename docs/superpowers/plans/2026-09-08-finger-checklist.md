@@ -92,4 +92,4 @@
 - [x] Validar HTTP 200, canonical, sitemap, robots, ausência de `gtm.js` e presença dos IDs no domínio público.
 - [x] Validar a publicação dos IDs confirmados e a rota de teste de evento; a confirmação de recebimento dos cliques deve ser feita no painel após uso real.
 - [x] Commitar com mensagem descritiva.
-- [ ] Enviar ao GitHub somente após a validação e registrar o hash do commit.
+- [x] Enviar ao GitHub somente após a validação e registrar o hash do commit.
