@@ -1,16 +1,17 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { EnvironmentCarousel } from "./components/environment-carousel";
+import { BriefingLink } from "./components/briefing-link";
 import { HeroBackgroundVideo } from "./components/hero-background-video";
 import { LeadForm } from "./components/lead-form";
 import { SectionHeading } from "./components/section-heading";
+import { WhatsAppLink } from "./components/whatsapp-link";
 import {
   FINGER_SANTA_CRUZ_HOURS,
   FINGER_SANTA_CRUZ_SOCIALS,
   FINGER_SANTA_CRUZ_WHATSAPP_DISPLAY,
-  WhatsAppLink,
-} from "./components/whatsapp-link";
-import { SITE_IMAGES } from "./lib/site-config";
+  SITE_IMAGES,
+} from "./lib/site-config";
 import { serializeJsonLd, structuredData } from "./lib/structured-data";
 
 const heroVideo = SITE_IMAGES.heroVideo;
@@ -223,6 +224,7 @@ function Hero() {
             aria-label="Conversar com a Finger Santa Cruz do Sul pelo WhatsApp"
             className="hidden h-12 items-center rounded-full border border-[#FFFCF2]/28 px-6 text-xs font-bold text-[#FFFCF2] transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] sm:inline-flex"
             message={whatsappMessage}
+            placement="whatsappHeader"
           >
             WhatsApp
           </WhatsAppLink>
@@ -250,15 +252,16 @@ function Hero() {
                 aria-label="Iniciar atendimento pelo WhatsApp com a Finger Santa Cruz do Sul"
                 className="flex min-h-14 items-center justify-center rounded-full bg-[#C44E2A] px-6 text-center text-sm font-bold text-white transition duration-300 hover:bg-[#FFFCF2] hover:text-[#403D39] sm:px-7"
                 message={whatsappMessage}
+                placement="whatsappHero"
               >
                 Quero meu espaço Finger
               </WhatsAppLink>
-              <a
+              <BriefingLink
                 className="flex min-h-14 items-center justify-center rounded-full border border-[#FFFCF2]/32 px-6 text-center text-sm font-bold text-[#FFFCF2] transition duration-300 hover:border-[#FFFCF2] hover:bg-[#FFFCF2]/10 sm:px-7"
                 href="#contato"
               >
                 Enviar briefing
-              </a>
+              </BriefingLink>
             </div>
           </div>
         </div>
@@ -517,6 +520,7 @@ function Specialists() {
                       aria-label="Iniciar atendimento pelo WhatsApp com Geísa Raupp"
                       className="mt-7 flex min-h-12 items-center justify-center rounded-full border border-[#FFFCF2]/18 px-5 text-center text-xs font-bold text-[#FFFCF2]/86 transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] hover:text-white"
                       message={whatsappMessage}
+                      placement="whatsappGeisa"
                     >
                       {person.cta}
                     </WhatsAppLink>
@@ -643,6 +647,7 @@ function PremiumFooter() {
               aria-label="Conversar com um especialista da Finger Santa Cruz do Sul pelo WhatsApp"
               className="text-[#FFFCF2] transition hover:text-[#C44E2A]"
               message={whatsappMessage}
+              placement="whatsappFooter"
             >
               Converse com um especialista
             </WhatsAppLink>
@@ -778,6 +783,7 @@ function MobileWhatsApp() {
         aria-label="Iniciar atendimento pelo WhatsApp com a Finger Santa Cruz do Sul"
         className="flex min-h-14 items-center justify-center rounded-full bg-[#C44E2A] px-6 text-sm font-bold text-white shadow-[0_18px_50px_rgba(37,36,34,0.26)]"
         message={whatsappMessage}
+        placement="whatsappMobileSticky"
       >
         Quero meu espaço Finger
       </WhatsAppLink>

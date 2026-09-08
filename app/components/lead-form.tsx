@@ -2,6 +2,10 @@
 
 import { ChangeEvent, FormEvent, useState } from "react";
 import {
+  FINGER_MARKETING_EVENTS,
+  trackMarketingEvent,
+} from "../lib/marketing-events";
+import {
   formatBrazilianPhone,
   limitPhoneDigits,
   validateEmail,
@@ -144,6 +148,9 @@ export function LeadForm() {
       }
 
       setStatus("success");
+      trackMarketingEvent(FINGER_MARKETING_EVENTS.leadSubmitted, {
+        form: "lead_form",
+      });
       form.reset();
       setPhone("");
       setErrors({});

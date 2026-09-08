@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { MarketingTags } from "./components/marketing-tags";
 import {
   SHARING_IMAGE_ALT,
   SITE_DESCRIPTION,
@@ -86,7 +86,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="h-full antialiased">
       <body className="flex min-h-full flex-col">
-        <GoogleTagManager gtmId="GTM-P8FMLBK9" />
+        <MarketingTags />
         {children}
       </body>
     </html>
