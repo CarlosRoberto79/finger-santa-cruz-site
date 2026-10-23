@@ -23,6 +23,19 @@ gtag('config', '${GA4_MEASUREMENT_ID}');`}
 fbq('init','${META_PIXEL_ID}');
 fbq('track','PageView');`}
       </Script>
+      <Script id="tintim-pixel" strategy="afterInteractive">
+        {`(function(window, document, script) {
+  if (!window.tt) {
+    window.tt = {};
+    const head = document.getElementsByTagName("head")[0];
+    const loader = document.createElement("script");
+    loader.async = 1;
+    loader.src = script;
+    head.appendChild(loader);
+  }
+  window.tt.accountCode = "f0917ae2-b8c6-4982-bd89-07a661ad4428";
+})(window, document, "//s.tintim.app/static/core/tintim-1.0.js");`}
+      </Script>
     </>
   );
 }
