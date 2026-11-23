@@ -67,14 +67,6 @@ const specialists = [
     description:
       "Especialista da Finger Santa Cruz do Sul com atuação em interiores, funcionalidade e ambientes personalizados.",
   },
-  {
-    id: "ana-nicolay",
-    name: "Ana Nicolay",
-    jobTitle: "Arquiteta e Urbanista",
-    image: "/specialists/ana.jpg",
-    description:
-      "Arquiteta e Urbanista da Finger Santa Cruz do Sul, especializada em projetos de interiores e detalhamento de ambientes personalizados.",
-  },
 ];
 
 export const structuredData = {

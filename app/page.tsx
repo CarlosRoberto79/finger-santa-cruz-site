@@ -125,16 +125,6 @@ const specialists = [
       "Sua vivência em projetos de interiores, aliada à paixão por arquitetura e design, contribui para criar espaços acolhedores, elegantes e alinhados à rotina de cada cliente.",
     ],
   },
-  {
-    name: "ANA NICOLAY",
-    role: "Especialista • Finger Santa Cruz do Sul",
-    image: "/specialists/ana.jpg",
-    alt: "Ana Nicolay, especialista Finger Santa Cruz do Sul.",
-    bio: [
-      "Arquiteta e Urbanista, Ana Nicolay transforma técnica e sensibilidade em ambientes que equilibram funcionalidade, conforto e estética contemporânea.",
-      "Com experiência em projetos de interiores e detalhamento executivo, desenvolve espaços personalizados com atenção minuciosa aos detalhes, sempre respeitando o estilo de vida e a essência de cada cliente.",
-    ],
-  },
 ];
 
 const whatsappMessage =
@@ -486,7 +476,7 @@ function Specialists() {
             </p>
           </SectionHeading>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2">
             {specialists.map((person, index) => (
               <article
                 className="group flex h-full animate-fade-up flex-col border border-[#FFFCF2]/12 bg-[#403D39]/42 p-3 transition duration-300 hover:border-[#C44E2A]/48 hover:bg-[#403D39]/70"
