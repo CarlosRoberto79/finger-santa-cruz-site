@@ -5,8 +5,9 @@ import { BriefingLink } from "./components/briefing-link";
 import { HeroBackgroundVideo } from "./components/hero-background-video";
 import { LeadForm } from "./components/lead-form";
 import { SectionHeading } from "./components/section-heading";
-import { TINTIM_LINKS, WhatsAppLink } from "./components/whatsapp-link";
+import { WhatsAppLink } from "./components/whatsapp-link";
 import {
+  TINTIM_LINKS,
   FINGER_SANTA_CRUZ_HOURS,
   FINGER_SANTA_CRUZ_SOCIALS,
   FINGER_SANTA_CRUZ_WHATSAPP_DISPLAY,
