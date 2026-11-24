@@ -12,6 +12,11 @@ import {
   FINGER_SANTA_CRUZ_WHATSAPP_DISPLAY,
   SITE_IMAGES,
 } from "./lib/site-config";
+import {
+  FINGER_SANTA_CRUZ_MAP_EMBED_URL,
+  FINGER_SANTA_CRUZ_MAP_URL,
+} from "./lib/site-config";
+import { faqItems } from "./lib/faq";
 import { serializeJsonLd, structuredData } from "./lib/structured-data";
 
 const heroVideo = SITE_IMAGES.heroVideo;
@@ -143,7 +148,9 @@ export default function Home() {
       <Gallery />
       <Authority />
       <Specialists />
+      <Faq />
       <Contact />
+      <ShowroomMap />
       <PremiumFooter />
       <MobileWhatsApp />
     </main>
@@ -203,6 +210,9 @@ function Hero() {
             </a>
             <a className="transition hover:text-[#FFFCF2]" href="#ambientes">
               Ambientes
+            </a>
+            <a className="transition hover:text-[#FFFCF2]" href="#duvidas">
+              Dúvidas
             </a>
             <a className="transition hover:text-[#FFFCF2]" href="#contato">
               Contato
@@ -519,6 +529,133 @@ function Specialists() {
               </article>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Faq() {
+  return (
+    <section
+      id="duvidas"
+      aria-labelledby="duvidas-title"
+      className="px-5 py-20 sm:px-8 sm:py-32 lg:px-10"
+    >
+      <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+        <div className="lg:sticky lg:top-10">
+          <SectionHeading
+            eyebrow="Dúvidas frequentes"
+            titleId="duvidas-title"
+            title="O que costumam perguntar antes do primeiro projeto."
+          >
+            <p>
+              Reunimos aqui as respostas que mais aparecem no atendimento. Se a
+              sua pergunta não estiver nesta lista, é só chamar a equipe no
+              WhatsApp.
+            </p>
+          </SectionHeading>
+
+          <WhatsAppLink
+            id="cta-whatsapp-duvidas"
+            aria-label="Tirar dúvidas pelo WhatsApp com a Finger Santa Cruz do Sul"
+            className="mt-9 inline-flex h-12 items-center rounded-full border border-[#403D39]/28 px-6 text-xs font-bold text-[#252422] transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] hover:text-white"
+            message={whatsappMessage}
+            placement="whatsappDuvidas"
+          >
+            Tirar uma dúvida
+          </WhatsAppLink>
+        </div>
+
+        <div className="border-t border-[#403D39]/16">
+          {faqItems.map((item) => (
+            <details
+              key={item.question}
+              className="group border-b border-[#403D39]/16"
+              name="faq-finger"
+            >
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-7 text-left font-display text-xl font-[500] leading-8 text-[#252422] transition duration-300 marker:hidden hover:text-[#C44E2A] sm:text-2xl [&::-webkit-details-marker]:hidden">
+                {item.question}
+                <span
+                  aria-hidden="true"
+                  className="relative mt-3 block h-[1px] w-4 shrink-0 bg-[#C44E2A] before:absolute before:left-1/2 before:top-1/2 before:h-4 before:w-[1px] before:-translate-x-1/2 before:-translate-y-1/2 before:bg-[#C44E2A] before:transition-transform before:duration-300 group-open:before:scale-y-0"
+                />
+              </summary>
+              <p className="max-w-2xl pb-8 pr-10 font-display text-lg font-light leading-8 text-[#403D39]/76">
+                {item.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ShowroomMap() {
+  return (
+    <section
+      id="showroom"
+      aria-labelledby="showroom-title"
+      className="px-5 py-20 sm:px-8 sm:py-32 lg:px-10"
+    >
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+        <div>
+          <SectionHeading
+            eyebrow="Showroom"
+            titleId="showroom-title"
+            title="Venha sentir os acabamentos de perto."
+          >
+            <p>
+              No centro de Santa Cruz do Sul, o showroom reúne ambientes
+              montados, materiais e acabamentos para você tocar antes de
+              decidir.
+            </p>
+          </SectionHeading>
+
+          <div className="mt-10 space-y-7">
+            <div className="border-t border-[#403D39]/16 pt-6">
+              <p className="text-[0.62rem] font-bold uppercase tracking-normal text-[#252422]">
+                Endereço
+              </p>
+              <address className="mt-4 not-italic font-display text-lg font-light leading-8 text-[#403D39]/76">
+                {showroomAddressLines.map((line) => (
+                  <span className="block" key={line}>
+                    {line}
+                  </span>
+                ))}
+              </address>
+            </div>
+            <div className="border-t border-[#403D39]/16 pt-6">
+              <p className="text-[0.62rem] font-bold uppercase tracking-normal text-[#252422]">
+                Horário
+              </p>
+              <p className="mt-4 font-display text-lg font-light leading-8 text-[#403D39]/76">
+                {FINGER_SANTA_CRUZ_HOURS}
+              </p>
+            </div>
+          </div>
+
+          <a
+            id="cta-rota-showroom"
+            href={FINGER_SANTA_CRUZ_MAP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-9 inline-flex h-12 items-center rounded-full border border-[#403D39]/28 px-6 text-xs font-bold text-[#252422] transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] hover:text-white"
+          >
+            Como chegar
+          </a>
+        </div>
+
+        <div className="relative aspect-[4/3] overflow-hidden border border-[#403D39]/14 bg-[#E9E1D5] lg:aspect-[16/10]">
+          <iframe
+            title="Mapa do showroom da Finger Santa Cruz do Sul"
+            src={FINGER_SANTA_CRUZ_MAP_EMBED_URL}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+            className="absolute inset-0 h-full w-full border-0"
+          />
         </div>
       </div>
     </section>

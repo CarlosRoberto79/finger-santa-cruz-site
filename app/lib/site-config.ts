@@ -44,6 +44,21 @@ export const FINGER_SANTA_CRUZ_COMMERCIAL_EMAIL =
   "fingersantacruzdosul@gmail.com";
 export const CONTACT_FORM_RECIPIENTS = ["procarlosroberto@gmail.com"];
 
+/** Showroom no centro de Santa Cruz do Sul (perfil do Google da loja). */
+export const FINGER_SANTA_CRUZ_PLACE_ID = "ChIJKSH4u2KjHJURkhYsyZTSNtg";
+export const FINGER_SANTA_CRUZ_GEO = {
+  latitude: -29.7118056,
+  longitude: -52.4295872,
+} as const;
+/** Link que abre o showroom no app/site do Google Maps. */
+export const FINGER_SANTA_CRUZ_MAP_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  FINGER_SANTA_CRUZ_ADDRESS,
+)}&query_place_id=${FINGER_SANTA_CRUZ_PLACE_ID}`;
+/** Mapa incorporado, sem chave de API e sem cookies do Google até o carregamento. */
+export const FINGER_SANTA_CRUZ_MAP_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(
+  FINGER_SANTA_CRUZ_ADDRESS,
+)}&z=16&hl=pt-BR&output=embed`;
+
 export const FINGER_SANTA_CRUZ_SOCIALS = {
   instagram: "https://www.instagram.com/finger.santacruzdosul/",
   facebook: "https://www.facebook.com/fingersantacruzdosul",
