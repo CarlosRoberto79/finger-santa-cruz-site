@@ -5,7 +5,7 @@ import { BriefingLink } from "./components/briefing-link";
 import { HeroBackgroundVideo } from "./components/hero-background-video";
 import { LeadForm } from "./components/lead-form";
 import { SectionHeading } from "./components/section-heading";
-import { WhatsAppLink } from "./components/whatsapp-link";
+import { TINTIM_LINKS, WhatsAppLink } from "./components/whatsapp-link";
 import {
   FINGER_SANTA_CRUZ_HOURS,
   FINGER_SANTA_CRUZ_SOCIALS,
@@ -126,6 +126,9 @@ const specialists = [
     ],
   },
 ];
+
+const arquitetosMessage =
+  "Olá, Finger Santa Cruz do Sul. Sou arquiteto(a) e gostaria de saber mais sobre a parceria com vocês.";
 
 const whatsappMessage =
   "Olá, Finger Santa Cruz do Sul. Quero fazer um ambiente personalizado com vocês.\n\nGostaria de iniciar meu atendimento com a Geísa Raupp.";
@@ -571,6 +574,27 @@ function Contact() {
               </p>
               <p className="mt-4">{FINGER_SANTA_CRUZ_HOURS}</p>
             </div>
+          </div>
+
+          <div className="mt-10 border-t border-[#403D39]/16 pt-6">
+            <p className="font-sans text-[0.62rem] font-bold uppercase tracking-normal text-[#252422]">
+              Para arquitetos
+            </p>
+            <p className="mt-4 font-display text-lg font-light leading-8 text-[#403D39]/76">
+              Atendemos escritórios de arquitetura e design de interiores com
+              material técnico para especificação e espaço no showroom para
+              reuniões com os seus clientes.
+            </p>
+            <WhatsAppLink
+              id="cta-whatsapp-arquitetos"
+              aria-label="Falar com a Finger Santa Cruz do Sul sobre parceria com arquitetos"
+              className="mt-6 inline-flex h-12 items-center rounded-full border border-[#403D39]/28 px-6 text-xs font-bold text-[#252422] transition duration-300 hover:border-[#C44E2A] hover:bg-[#C44E2A] hover:text-white"
+              message={arquitetosMessage}
+              linkCode={TINTIM_LINKS.arquitetos}
+              placement="whatsappArquitetos"
+            >
+              Sou arquiteto(a)
+            </WhatsAppLink>
           </div>
         </div>
 
