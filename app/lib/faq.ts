@@ -39,6 +39,11 @@ export const faqItems: FaqItem[] = [
       "Sim. A medição, a entrega e a montagem ficam com a equipe da Finger Santa Cruz do Sul, que acompanha cada etapa até o ambiente ficar pronto do jeito que foi projetado.",
   },
   {
+    question: "Qual é o prazo de entrega?",
+    answer:
+      "O prazo médio é de 28 dias. A data exata é combinada com você no fechamento do projeto, de acordo com o andamento da sua obra.",
+  },
+  {
     question: "Os móveis são fabricados pela própria Finger?",
     answer:
       "Sim. A Finger fabrica os próprios móveis desde 1978, com parque industrial próprio e maquinário de alta precisão. A marca também exporta e recebeu o Prêmio Exportação RS.",
