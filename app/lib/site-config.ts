@@ -44,6 +44,14 @@ export const FINGER_SANTA_CRUZ_COMMERCIAL_EMAIL =
   "fingersantacruzdosul@gmail.com";
 export const CONTACT_FORM_RECIPIENTS = ["procarlosroberto@gmail.com"];
 
+/** Conta da Finger Santa Cruz do Sul no Tintim. */
+export const TINTIM_CLIENT_ID = "f0917ae2-b8c6-4982-bd89-07a661ad4428";
+/** Códigos dos links rastreáveis do Tintim usados pelo site. */
+export const TINTIM_LINKS = {
+  site: "16b1cb24-27a8-4eec-8594-cc1d74f6eaa2",
+  arquitetos: "390ace6e-431d-4638-9cd2-339ce022c4d8",
+} as const;
+
 /** Showroom no centro de Santa Cruz do Sul (perfil do Google da loja). */
 export const FINGER_SANTA_CRUZ_PLACE_ID = "ChIJKSH4u2KjHJURkhYsyZTSNtg";
 export const FINGER_SANTA_CRUZ_GEO = {
