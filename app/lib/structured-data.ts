@@ -1,7 +1,10 @@
+import { faqItems } from "./faq";
 import {
   absoluteUrl,
   FINGER_SANTA_CRUZ_ADDRESS,
   FINGER_SANTA_CRUZ_COMMERCIAL_EMAIL,
+  FINGER_SANTA_CRUZ_GEO,
+  FINGER_SANTA_CRUZ_MAP_URL,
   FINGER_SANTA_CRUZ_SOCIALS,
   FINGER_SANTA_CRUZ_WHATSAPP_DISPLAY,
   SHARING_IMAGE_ALT,
@@ -18,6 +21,7 @@ const organizationId = `${pageUrl}#organization`;
 const websiteId = `${pageUrl}#website`;
 const webpageId = `${pageUrl}#webpage`;
 const breadcrumbId = `${pageUrl}#breadcrumb`;
+const faqId = `${pageUrl}#faq`;
 const sameAs = Object.values(FINGER_SANTA_CRUZ_SOCIALS);
 
 const serviceNames = [
@@ -102,6 +106,12 @@ export const structuredData = {
         postalCode: "96810-202",
         addressCountry: "BR",
       },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: FINGER_SANTA_CRUZ_GEO.latitude,
+        longitude: FINGER_SANTA_CRUZ_GEO.longitude,
+      },
+      hasMap: FINGER_SANTA_CRUZ_MAP_URL,
       areaServed: [
         {
           "@type": "City",
@@ -190,6 +200,9 @@ export const structuredData = {
       breadcrumb: {
         "@id": breadcrumbId,
       },
+      hasPart: {
+        "@id": faqId,
+      },
       primaryImageOfPage: {
         "@type": "ImageObject",
         url: SITE_IMAGES.sharing,
@@ -207,6 +220,26 @@ export const structuredData = {
           item: pageUrl,
         },
       ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": faqId,
+      name: "Dúvidas frequentes — Finger Santa Cruz do Sul",
+      inLanguage: "pt-BR",
+      isPartOf: {
+        "@id": webpageId,
+      },
+      about: {
+        "@id": localBusinessId,
+      },
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
     },
     ...specialists.map((person) => ({
       "@type": "Person",

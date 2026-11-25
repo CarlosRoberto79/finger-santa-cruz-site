@@ -7,6 +7,7 @@ export const FINGER_MARKETING_EVENTS = {
   whatsappHero: "click_whatsapp_hero",
   whatsappGeisa: "click_whatsapp_geisa",
   whatsappArquitetos: "click_whatsapp_arquitetos",
+  whatsappDuvidas: "click_whatsapp_duvidas",
   whatsappFooter: "click_whatsapp_footer",
   whatsappMobileSticky: "click_whatsapp_mobile_sticky",
   leadSubmitted: "generate_lead",
